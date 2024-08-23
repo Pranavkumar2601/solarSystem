@@ -1,0 +1,128 @@
+/* src/components/Skills.css */
+body {
+  background-color: #1e1e1e; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.skills {
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    #333,
+    #555
+  ); /* Subtle gradient background */
+}
+
+header {
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.9
+  ); /* Semi-transparent header background */
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #444; /* Bottom border for header */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f0f0f0;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill {
+  background-color: rgba(
+    68,
+    68,
+    68,
+    0.9
+  ); /* Darker semi-transparent skill boxes */
+  padding: 1.5rem;
+  border-radius: 8px; /* More rounded corners */
+  width: 250px; /* Fixed width */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.skill:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  background-color: rgba(68, 68, 68, 1); /* Darker background on hover */
+}
+
+.skill-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px; /* Increased height */
+  background-color: #444; /* Darker background */
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #cd710f; /* Green fill color */
+  border-radius: 6px;
+  width: 0%; /* Initial width */
+  transition: width 1s ease-in-out; /* Smooth transition for the fill */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Animation for the progress bar fill */
+@keyframes fillAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress-bar-fill {
+  animation: fillAnimation 1s ease-in-out forwards;
+}
+
+footer {
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.9); /* Footer background color */
+  color: #e0e0e0; /* Footer text color */
+}

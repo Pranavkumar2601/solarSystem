@@ -1,0 +1,85 @@
+.carousel {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.carousel-container {
+  position: fixed;
+  width: 80%;
+  height: 50%;
+  left: 10%;
+  top: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.carousel.minimized .carousel-container {
+  top: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  cursor: pointer;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1000;
+}
+/* Button to open the carousel */
+.open-carousel-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to center the button */
+  padding: 10px 20px;
+  background-color: #ff9800; /* Orange background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's on top of other elements */
+  font-size: 16px; /* Font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+}
+
+/* Hover effect */
+.open-carousel-button:hover {
+  background-color: #e68900; /* Darker orange on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
