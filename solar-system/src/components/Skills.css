@@ -1,128 +1,161 @@
-/* src/components/Skills.css */
-body {
-  background-color: #1e1e1e; /* Dark background */
-  color: #e0e0e0; /* Light text color */
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.skills {
-  height: 100vh; /* Full viewport height */
-  overflow-y: auto; /* Enable vertical scrolling */
+.skills-page {
+  position: relative;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    #333,
-    #555
-  ); /* Subtle gradient background */
+  justify-content: space-between;
+  align-items: flex-end; /* Align items to the bottom */
+  padding: 20px;
 }
 
-header {
-  background-color: rgba(
-    51,
-    51,
-    51,
-    0.9
-  ); /* Semi-transparent header background */
-  padding: 1.5rem;
-  width: 100%;
-  text-align: center;
-  border-bottom: 2px solid #444; /* Bottom border for header */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-}
-
-main {
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #f0f0f0;
-}
-
-p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+.skills-list {
+  position: absolute;
+  width: 40%; /* Adjust width as needed */
+  margin: 50px 30px;
+  word-wrap: break-word; /* Ensure text wraps to the next line if it overflows */
+  align-self: flex-start; /* Align the skills list to the top */
 }
 
 .skill {
-  background-color: rgba(
-    68,
-    68,
-    68,
-    0.9
-  ); /* Darker semi-transparent skill boxes */
-  padding: 1.5rem;
-  border-radius: 8px; /* More rounded corners */
-  width: 250px; /* Fixed width */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  margin-top: 25px;
+  font-size: 17px;
 }
 
-.skill:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
-  background-color: rgba(68, 68, 68, 1); /* Darker background on hover */
+.skill span {
+  float: right;
 }
 
-.skill-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.progress-bar {
+.skill div {
   width: 100%;
-  height: 12px; /* Increased height */
-  background-color: #444; /* Darker background */
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 1rem;
+  float: left;
+  margin: 10px;
+  background: #e7e7e7;
+  border-radius: 10px;
+}
+
+.skill div span {
+  background: #ffbf35;
+  height: 5px;
+  float: left;
+}
+
+.circular-skills {
   position: relative;
+  margin-left: 70%;
+  width: 20%; /* Adjust the width to ensure the content fits well */
+  display: grid; /* Use grid layout for easy column management */
+  grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+  gap: 20px; /* Add some space between the columns */
+  align-items: flex-start;
 }
 
-.progress-bar-fill {
-  height: 100%;
-  background-color: #cd710f; /* Green fill color */
-  border-radius: 6px;
-  width: 0%; /* Initial width */
-  transition: width 1s ease-in-out; /* Smooth transition for the fill */
-  position: absolute;
-  left: 0;
-  top: 0;
+.circular-skills > div {
+  align-self: center; /* Center each circular skill within its grid cell */
+  justify-self: center; /* Center each circular skill horizontally within its grid cell */
+  opacity: 0; /* Start with invisible elements */
+  animation: fadeInUp 1s ease-in-out forwards; /* Apply animation */
 }
 
-/* Animation for the progress bar fill */
-@keyframes fillAnimation {
+@keyframes fadeInUp {
   from {
-    width: 0%;
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    width: 100%;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.progress-bar-fill {
-  animation: fillAnimation 1s ease-in-out forwards;
+/* Add staggered animation for each item */
+.circular-skills > div:nth-child(1) {
+  animation-delay: 0.2s;
 }
 
-footer {
-  margin: auto;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: rgba(51, 51, 51, 0.9); /* Footer background color */
-  color: #e0e0e0; /* Footer text color */
+.circular-skills > div:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.circular-skills > div:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.circular-skills > div:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.circular-skills > div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.circular-skills > div:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.circular-skills > div:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.circular-skills > div:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+.circular-skills > div:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+div[role="progressbar"] {
+  color: #ffbf35;
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  place-items: center;
+  display: grid;
+  --pgPercentage: var(--value);
+  background: radial-gradient(
+      closest-side,
+      black 80%,
+      transparent 0 99.9%,
+      black 0
+    ),
+    conic-gradient(#ffbf35 calc(var(--pgPercentage) * 1%), #ffe6af 0);
+}
+
+.skills-button-container {
+  position: absolute;
+  bottom: -30%; /* Adjust this percentage to move the button higher or lower */
+  left: 40%;
+  transform: translateY(50%);
+  margin: 10px 10px;
+}
+
+.nav-button {
+  padding: 10px 10px;
+  margin: 0 10px;
+  background-color: #ffbf35;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-button:hover {
+  background-color: #e6a100;
+}
+.heading-text {
+  font-size: 3rem;
+  margin: 20px 30px; /* Adjust margin to center the text better */
+  text-align: center; /* Center align the text */
+  font-weight: bold; /* Make the text bold */
+  animation: fadeIn 1.5s ease-in-out; /* Apply animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

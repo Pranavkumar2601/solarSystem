@@ -1,74 +1,211 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0e0d0d;
-  color: #e9e0e0;
-}
-
-.about-section {
+/* About.css */
+.about-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #000000;
 }
 
-.profile-container {
-  max-width: 800px;
-  padding: 20px;
-  background-color: #132d80;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.about-content {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
   text-align: center;
 }
 
-.profile-container h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
-.profile-container .tagline {
-  font-size: 18px;
-  color: #f7f7f7;
-  margin-bottom: 40px;
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
-.profile-content {
+.info-section {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
 }
 
-.about,
-.details {
+.personal-info {
+  width: 30%;
+}
+
+.education {
+  width: 65%;
+}
+
+.personal-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.personal-info li {
+  margin-bottom: 0.5em;
+}
+
+/* Education table styles */
+.education table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+.education th,
+.education td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5em;
   text-align: left;
 }
 
-.about h2,
-.details h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.details p {
-  margin: 5px 0;
+.education th {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-links {
-  margin-top: 20px;
-  font-size: 18px;
+  text-align: center;
 }
 
-.social-links a {
-  color: #007bff;
+.social-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin-bottom: 0;
+}
+
+a {
+  color: #fff;
   text-decoration: none;
-  margin-right: 15px;
+  transition: opacity 0.3s;
 }
 
-.social-links a:hover {
-  text-decoration: underline;
+a:hover {
+  opacity: 0.8;
+}
+
+.fab {
+  margin-right: 0.5em;
+}
+
+/* Styles for EarthBackground component */
+.earth-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .info-section {
+    flex-direction: column;
+  }
+
+  .personal-info,
+  .education {
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+
+  .social-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+.skills-button-container {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.skills-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  animation: slideDown 5s infinite;
+  white-space: nowrap;
+}
+
+.skills-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+@keyframes slideDown {
+  0%,
+  100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* Responsive adjustments for the skills button */
+@media (max-width: 768px) {
+  .skills-button-container {
+    right: 10px;
+  }
+
+  .skills-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
 }

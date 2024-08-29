@@ -1,0 +1,92 @@
+/* Modal Overlay */
+.explore-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Transparent background for overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Modal Content */
+.explore-modal-content {
+  background: rgba(
+    21,
+    21,
+    21,
+    0.9
+  ); /* Semi-transparent background for modal content */
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  max-width: 90%; /* Adjust max-width as needed */
+  width: auto;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff; /* Default color for close button */
+}
+
+.close-button:hover {
+  color: #007bff; /* Hover color for close button */
+}
+
+/* Heading */
+.explore-modal-content h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f8efef; /* Color for the heading */
+}
+
+/* List Styles */
+.explore-modal-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+}
+
+.explore-modal-content li {
+  margin-bottom: 1rem;
+}
+
+.explore-modal-content a {
+  text-decoration: none;
+  color: #f8efef; /* Default color for links */
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.explore-modal-content a:hover {
+  color: #007bff; /* Hover color for links */
+}
+
+/* Paragraphs */
+.explore-modal-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #f8efef; /* Color for paragraphs */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .explore-modal-content ul {
+    flex-direction: column;
+  }
+}
